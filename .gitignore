@@ -1,0 +1,8 @@
+.DS_Store
+.env
+.env.*
+*.pyc
+__pycache__/
+output/
+tmp/
+dist/

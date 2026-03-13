@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nano Banana"
+  short_description: "Generate or edit Gemini images with Nano Banana"
+  default_prompt: "Use Nano Banana to generate or edit Gemini images for this request, handling reference images when present, then return the prompt, model, and output paths."
