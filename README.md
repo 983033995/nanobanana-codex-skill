@@ -38,7 +38,7 @@ npx skills add 983033995/nanobanana-codex-skill
 Or install just this skill path:
 
 ```bash
-npx skills add 983033995/nanobanana-codex-skill/skills/nanobanana
+npx skills add 983033995/nanobanana-codex-skill --skill nanobanana
 ```
 
 ## Requirements
@@ -109,7 +109,7 @@ npx skills add 983033995/nanobanana-codex-skill
 只安装这个技能目录：
 
 ```bash
-npx skills add 983033995/nanobanana-codex-skill/skills/nanobanana
+npx skills add 983033995/nanobanana-codex-skill --skill nanobanana
 ```
 
 ## 依赖
