@@ -1,6 +1,9 @@
 ---
 name: nanobanana
 description: Use when the user asks to generate or edit images with Nano Banana, Gemini image models, `gemini-3.1-flash-image-preview`, `gemini-3-pro-image-preview`, or says things like “用 Gemini 出图”, “用 Nano Banana 生成图片”, “改图”, “多张变体”, “海报/插画/图标”. Prefer the bundled CLI at `scripts/nanobanana.py` instead of ad-hoc requests.
+license: MIT
+metadata:
+  version: 1.0.0
 ---
 
 # Nano Banana Skill
