@@ -6,6 +6,8 @@
 
 A Codex-compatible skill for generating and editing images with Gemini Nano Banana models.
 
+Patch `v1.0.1` improves local proxy fallback so Python image requests work more reliably in Codex environments that rely on a local proxy port.
+
 ![Nano Banana Preview](./assets/nanobanana-preview.png)
 
 [中文说明](#中文说明)

@@ -67,37 +67,38 @@ def _proxy_ports_from_env() -> tuple[int, ...]:
     return tuple(ports) or COMMON_PROXY_PORTS
 
 
+def _apply_proxy(proxy_url: str) -> None:
+    os.environ.setdefault("HTTP_PROXY", proxy_url)
+    os.environ.setdefault("HTTPS_PROXY", proxy_url)
+    os.environ.setdefault("http_proxy", proxy_url)
+    os.environ.setdefault("https_proxy", proxy_url)
+    opener = urllib.request.build_opener(
+        urllib.request.ProxyHandler(
+            {
+                "http": proxy_url,
+                "https": proxy_url,
+            }
+        )
+    )
+    urllib.request.install_opener(opener)
+
+
 def configure_proxy() -> None:
     http_proxy = os.getenv("HTTP_PROXY") or os.getenv("http_proxy")
     https_proxy = os.getenv("HTTPS_PROXY") or os.getenv("https_proxy")
     if http_proxy or https_proxy:
+        _apply_proxy(https_proxy or http_proxy or "")
         return
 
     explicit_proxy = os.getenv("NANOBANANA_PROXY_URL")
     if explicit_proxy:
-        opener = urllib.request.build_opener(
-            urllib.request.ProxyHandler(
-                {
-                    "http": explicit_proxy,
-                    "https": explicit_proxy,
-                }
-            )
-        )
-        urllib.request.install_opener(opener)
+        _apply_proxy(explicit_proxy)
         return
 
     for port in _proxy_ports_from_env():
         if _port_open("127.0.0.1", port):
             proxy_url = f"http://127.0.0.1:{port}"
-            opener = urllib.request.build_opener(
-                urllib.request.ProxyHandler(
-                    {
-                        "http": proxy_url,
-                        "https": proxy_url,
-                    }
-                )
-            )
-            urllib.request.install_opener(opener)
+            _apply_proxy(proxy_url)
             return
 
 
