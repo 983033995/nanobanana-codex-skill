@@ -1,5 +1,9 @@
 # Nano Banana Skill for Codex
 
+[![Release](https://img.shields.io/github/v/release/983033995/nanobanana-codex-skill)](https://github.com/983033995/nanobanana-codex-skill/releases/tag/v1.0.0)
+[![License](https://img.shields.io/github/license/983033995/nanobanana-codex-skill)](./LICENSE)
+[![Install](https://img.shields.io/badge/install-npx%20skills%20add%20983033995%2Fnanobanana--codex--skill-blue)](https://github.com/983033995/nanobanana-codex-skill)
+
 A Codex-compatible skill for generating and editing images with Gemini Nano Banana models.
 
 ![Nano Banana Preview](./assets/nanobanana-preview.png)
